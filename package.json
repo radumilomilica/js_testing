@@ -1,0 +1,22 @@
+{
+  "name": "js_testing",
+  "version": "1.0.0",
+  "description": "Skola Rajak QA Kurs JS Testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radumilomilica/js_testing.git"
+  },
+  "author": "Milica Radumilo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/radumilomilica/js_testing/issues"
+  },
+  "homepage": "https://github.com/radumilomilica/js_testing#readme",
+  "dependencies": {
+    "mocha": "^10.0.0"
+  }
+}
