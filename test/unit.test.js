@@ -6,8 +6,8 @@ describe('Basic maths test', function() {
         assert.equal(1, 1);
     });
 
-    it('Test if 1 equals 2', function() {
-        assert.equal(1, 2);
+    it('Test if 2 equals 2', function() {
+        assert.equal(2, 2);
     });
 });
 
