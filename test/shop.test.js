@@ -87,7 +87,16 @@ describe('shop.qa.rs tests', function() {
         const login = await driver.findElement(By.name('login'));
         await login.click();
 
-        expect(await driver.findElement(By.css('h2')).getText()).to.contain('Welcome back');
+        expect(await driver.findElement(By.css('h2')).getText()).to.contain('Welcome back'); 
+
+    });
+
+    it("Goes to the View shopping cart", async function() {
+        const view = await driver.findElement(By.linkText('View shopping cart'));
+        await view.click();
+
+        expect(await driver.findElement(By.name('checkout')).getAttribute('value')).to.contain('Checkout');
+        await driver.sleep(3000);
     });
 
 });
