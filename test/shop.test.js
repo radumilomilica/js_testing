@@ -91,6 +91,8 @@ describe('shop.qa.rs tests', function() {
 
     });
 
+    //domaci
+
     it("Goes to the View shopping cart", async function() {
         const view = await driver.findElement(By.linkText('View shopping cart'));
         await view.click();
