@@ -199,4 +199,11 @@ describe('shop.qa.rs tests', function() {
         expect(await historyStatus.getText()).to.be.eq('Ordered');
     });
 
+    it("Performs logout", async function() {
+        const logout = await driver.findElement(By.partialLinkText('Logout'));
+        await logout.click();
+
+        expect(await driver.findElement(By.linkText('Login')).isDisplayed()).to.be.true;
+    });
+
 });
