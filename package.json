@@ -18,6 +18,7 @@
   "homepage": "https://github.com/radumilomilica/js_testing#readme",
   "dependencies": {
     "chai": "^4.3.6",
+    "chai-as-promised": "^7.1.1",
     "mocha": "^10.0.0",
     "selenium-webdriver": "^4.1.2"
   }
