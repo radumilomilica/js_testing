@@ -5,7 +5,7 @@ const chai = require("chai");
 const expect = chai.expect;
 const chrome = require("selenium-webdriver/chrome");
 
-describe("AutomationP", function () {
+describe("AP", function () {
   let driver;
 
   before(async function () {
@@ -27,7 +27,7 @@ describe("AutomationP", function () {
     );
   });
 
-  it("Goes to registration page ", async function () {
+    it("Goes to registration page ", async function () {
     const login = await driver.findElement(By.className("login"));
     await login.click();
 
@@ -41,7 +41,7 @@ describe("AutomationP", function () {
   it("Register new user", async function () {
     const email = await driver.findElement(By.id("email_create"));
     // Email adresa treba biti razlicita prilikom svakog pokretanja testa
-    email.sendKeys("bob@buttons.150.email");
+    email.sendKeys("bob@buttons.152.email");
 
     const btnCreateAcc = await driver.findElement(By.id("SubmitCreate"));
     await btnCreateAcc.click();
@@ -109,4 +109,24 @@ describe("AutomationP", function () {
     const myAccount = await driver.findElement(By.className("page-heading")).getText();
     expect(myAccount.toLowerCase()).to.contain("my account");
   });
+
+  it("Performs logout", async function() {
+      const logout = await driver.findElement(By.className('logout'));
+      await logout.click;
+      expect(await driver.getCurrentUrl(
+        'http://automationpractice.com/index.php?controller=authentication&back=my-account'));
+        await driver.sleep(10000);
+  });
+
+  it('Login exsisting user', async function() {
+        const inputEmail = await driver.findElement(By.id("email"));
+        inputEmail.sendKeys('bob@buttons.8.email');
+        const inputPassword = await driver.findElement(By.id("passwd"));
+        inputPassword.sendKeys('asdf1234');
+        const signIn = await driver.findElement(By.id('SubmitLogin'));
+        await signIn.click();
+        await driver.wait(until.elementLocated(By.id('center_column')));
+        expect(await driver.findElement(By.css('h1')).getText()).to.contain('MY ACCOUNT');
+  });
+
 });
